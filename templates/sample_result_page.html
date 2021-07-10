@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="utf-8">
+	<title>LoveMeSomeIceCream</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navigation.css') }}">
+</head>
+
+
+<body>
+
+	<!--Navigation Bar-->
+	<div class="navigationBar">
+		<div class="contain">
+			<div>
+				<img src={{ url_for('static', filename='logo.png') }} alt="Site logo" class="logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href={{ url_for("homePage") }}>Home</a></li>
+          <li><a href={{ url_for("downloadPage") }}>Download Data</a></li>
+          <li><a href={{ url_for("aboutPage") }}>About Data</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <!--Display Result-->
+    <section class = "sec-result" aria-label="main content">
+        <div class="result">
+            <!-- Display the overview (name, brand, rating, description) -->
+            <div class="product-overview">
+                <img src="{{url_for('static', filename='images/'+product.image_key+'.png')}}" alt="product +image" class="ice-cream-img">
+                <div class="overview-text">
+                    <h1> {{ product.product_name }} </h1>
+
+                    <!-- Display subhead for Ben & Jerry's product -->
+                    <div class="overview-column">
+                        {% if product.brand == "Ben & Jerry's" %}
+                        <div class="overview-detail">
+                            <div class="overview-title"><b>Subhead</b></div>
+                            <div class="overview-content">{{ product.subhead }}</div>
+                        </div>
+                        {% endif %}
+
+                        <div class="overview-detail">
+                            <div class="overview-title"><b>Brand Name</b></div>
+                            <div class="overview-content">{{ product.brand }}</div>
+                        </div>
+
+                        <div class="overview-detail">
+                            <div class="overview-title"><b>Rating</b></div>
+                            <div class="overview-content"> {{ product.rating }} </div>
+                        </div>
+
+                        <div class="overview-detail">
+                            <div class="overview-title"><b>Descriptions</b></div>
+                            <div class="overview-content">{{ product.product_description }}</div>
+                        </div>         
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display the ingredients -->
+            <div class="product-detail">
+              <div class="ingredients">
+                <h2>Ingredients</h2>
+                <p>
+                  {{ product.ingredients }}
+                </p>
+              </div>  
+            </div>
+
+            <!-- Display the reviews -->
+            <div class="product-review">
+              <div class ="subheader"><h2>Reviews</h2></div>
+              <ul>
+                  {% for list_of_dict in reviews: %} 
+                <li> 
+                    <div class = "review-title">
+                        <div class = "title">
+                          {{ list_of_dict.title }} </div>
+                        <div class = "rating-star">Rating: {{ list_of_dict.stars }}</div>
+                    </div>
+                    <div class = "author"><i>From: {{ list_of_dict.author }}</i> </div>
+                    <p class = "comment-text"> {{ list_of_dict.review_text }}</p>
+                </li>
+                <br> 
+            {% endfor %}
+            </ul>
+            <br> 
+
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

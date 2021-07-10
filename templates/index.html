@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>LoveMeSomeIceCream</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index_style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navigation.css') }}">
+  <!-- Source of external css libarary -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+
+	<!--Navigation Bar-->
+	<div class="navigationBar">
+		<div class="contain">
+			<div>
+				<img src={{ url_for('static', filename='logo.png') }} alt="Site logo" class="logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href={{ url_for("homePage") }}>Home</a></li>
+          <li><a href={{ url_for("downloadPage") }}>Download Data</a></li>
+          <li><a href={{ url_for("aboutPage") }}>About Data</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+    <!--Main Search Area-->
+    <section aria-label="Search by brands, product name, ingredients, or review keywords" class='search'>      
+        <!--Image-->
+        <div class="home_img">
+            <img id="sig-pic" src="{{ url_for('static', filename='sig-pic.jpeg') }}" alt="Site signature image"/>
+        </div>
+
+        <!--Search Content-->
+        <div class="search_content">
+            <h1 class="welcome_title">
+                <div class="header_top">Find the ice cream</div>
+                <div class="header_title">That you will love</div>
+            </h1>
+
+            <div class="line">
+                <img src="{{ url_for('static', filename='line.png') }}"" alt="decoration line">
+			</div>
+            <!--Welcome blurb-->
+            <div class="welcome_blurb"> Your next favorite ice cream product can be found here using our comprehensive search filters. We will provide you with all the information you want about ice creams.</div>
+            <!--Add seperate radio buttons for different search conditions-->
+            <form action="/results" method="post">
+                <div class= "home__search__verticals">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active" onclick="changeSearchArea('brand')">
+                        <input type="radio" id="tab-Brand" autocomplete = "off" name = "search_option" checked value = "brand">Brand 
+                  </label>
+                  <label class="btn btn-secondary" onclick="changeSearchArea('name')">
+                        <input type="radio" id="tab-Ice_cream_name" autocomplete = "off" name = "search_option" value = "name">Name
+                  </label>
+                  <label class="btn btn-secondary" onclick="changeSearchArea('ingredients')">
+                        <input type="radio" id="tab-Ingredients_keyword" autocomplete = "off" name = "search_option" value = "ingredients">Ingredients
+                  </label>
+                    <label class="btn btn-secondary" onclick="changeSearchArea('advance')">
+                        <input type="radio" id="tab-Review_keyword" autocomplete = "off" name = "search_option" value = "advance_search">Advance Search
+                  </label>
+                </div>
+                </div>
+                
+                <!--Format seperate search bars for different search conditions selected-->
+                <div class="site-search" id="site-search">
+                    <input type="text" id="site-search-text" name="search_text"
+                        aria-label="Search through site content" class="search_bar">
+            
+                    <input type="image" class = "search-button" src="{{ url_for('static', filename='loupe.png') }}" alt="search button" width="51" height="51" value="">
+                </div>
+
+                <div class="brand-search" id="brand-search">
+                    <select class="form-select form-select-lg mb-2" aria-label="Default select example" id="brand" name="brand_s" size="1">
+                    <option selected value="">Select the brand</option>
+                    <option value="bj">Ben & Jerry's</option>
+                    <option value="hd">Häagen-Dazs</option>
+                    <option value="breyers">Breyers</option>
+                    <option value="talenti">Talenti</option>
+                    </select>
+                    
+                    <input type="image" class = "search-button-new" src="{{ url_for('static', filename='loupe_white.png') }}" alt="search button" width="45" height="45" value="">
+                </div>
+
+                <div class="advance-search" id="advance-search">
+                    <div class="form-group row">
+                        <label for="brand" class="col-sm-2 col-form-label">Brand</label>
+                    <div class="col-sm-10">
+                    <select class="form-select" aria-label="Default select example" id="brand" name="brand_a" size="1">
+                    <option selected value="">All brands</option>
+                    <option value="bj">Ben & Jerry's</option>
+                    <option value="hd">Häagen-Dazs</option>
+                    <option value="breyers">Breyers</option>
+                    <option value="talenti">Talenti</option>
+                    </select>
+                    </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="advance-search-name-text" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="advance-search-name-text" name="search_text_name"
+                        aria-label="Search product name" placeholder="Enter a product name/subhead keyword, eg. Cannoli" class="form-control">
+                    </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="advance-search-name-text" class="col-form-label">Rating Lower Bound</label>
+                        <input type="text" id="advance-search-lower-text" name="search_text_lower"
+                        aria-label="Search rating lower" placeholder="number between 1 and 5" class="form-control">
+                        <small id="lowerBoundHelp" class="form-text"> eg. 3.5</small>
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="advance-search-name-text" class="col-form-label">Rating Upper Bound</label>
+                        <input type="text" id="advance-search-upper-text" name="search_text_upper"
+                        aria-label="Search rating upper" placeholder="number between 1 and 5" class="form-control">
+                        <small id="upperBoundHelp" class="form-text"> eg. 4.8</small>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="advance-search-ingredients-text" class="col-form-label">Ingredients</label>
+                        <input type="text" id="advance-search-ingredients-text" name="search_text_ingrediens"
+                        aria-label="Search ingredients" placeholder="Enter an ingredient, eg. chocolate" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="advance-search-review-text" class="col-form-label">Review</label>
+                        <input type="text" id="advance-search-review-text" name="search_text_review"
+                        aria-label="Search reviews" placeholder="Enter one review keyword, eg. worst" class="form-control">
+                    </div>
+                    
+
+                    <input type="image" class = "search-button-new" src="{{ url_for('static', filename='loupe_white.png') }}" alt="search button" width="48" height="48" value="">
+                </div>
+
+            </form>
+              
+                
+        </div>    
+    
+    </section>
+
+    <!-- Source of external js libarary -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

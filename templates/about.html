@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="utf-8">
+	<title>LoveMeSomeIceCream</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navigation.css') }}">
+</head>
+
+
+<body>
+<!--Navigation Bar-->
+	<div class="navigationBar">
+		<div class="contain">
+			<div>
+				<img src={{ url_for('static', filename='logo.png') }} alt="Site logo" class="logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href={{ url_for("homePage") }}>Home</a></li>
+          <li><a href={{ url_for("downloadPage") }}>Download Data</a></li>
+          <li><a href={{ url_for("aboutPage") }}>About Data</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<!--About Content-->
+<div class = "about">
+
+<section aria-label="Source-info" class="Source">
+  <div class = "source-info">
+  <div class = "source-info-content">
+    <h1>Source of Data</h1>
+    <p>This dataset is provided by Tyson Pond on Kaggle.com (<a href = "https://www.kaggle.com/tysonpo/ice-cream-dataset">linked here</a>). </p> 
+    <p>This dataset contains details (including ingredients, ratings, product names), images, and reviews of 241 ice cream flavors across 4 brands (Ben & Jerry's, Häagen-Dazs, Breyers, and Talenti). All datasets provided are in .csv format, and the images provided are in png format.</p>
+  </div>
+  </div>
+</section>
+
+
+<!--Metadata-->
+<section aria-label="Metadata">  
+  <div class = "Metadata">
+    <h1>Metadata</h1>
+    <div class="metadata-column">
+        <div class="metadata-detail">
+            <div class="metadata-title"><b>License</b></div>
+            <div class="metadata-content">CC0: Public Domain</div>
+        </div>
+
+        <div class="metadata-detail">
+            <div class="metadata-title"><b>Collection methodology</b></div>
+            <div class="metadata-content">
+                Data was collected September-Oct 2020. Starting URLs for each site were:<br>(i) <a href = "https://www.benjerry.com/flavors/ice-cream-pints">   https://www.benjerry.com/flavors/ice-cream-pints</a><br>(ii) <a href = "https://www.haagendazs.us/products">  https://www.haagendazs.us/products</a><br> (iii) <a href ="https://www.breyers.com/us/en/products.html"> https://www.breyers.com/us/en/products.html</a><br>(iv) <a href = "https://www.talentigelato.com/product-category/talenti-gelato-flavors">https://www.talentigelato.com/product-category/talenti-gelato-flavors </a><br>Duplicate records were removed from the data.
+            </div>
+        </div>
+
+        <div class="metadata-detail">
+            <div class="metadata-title"><b>Date coverage</b></div>
+            <div class="metadata-content">2020-09-01 to 2020-10-04</div>
+        </div>
+        
+        <div class="metadata-detail">
+            <div class="metadata-title"><b>Sources</b></div>
+            <div class="metadata-content">
+                <a href = "https://www.benjerry.com/">https://www.benjerry.com/</a><br> <a href = "https://www.haagendazs.us/">https://www.haagendazs.us/</a><br> <a href= "https://www.breyers.com/us/en/">https://www.breyers.com/us/en/</a><br> <a href = "https://www.talentigelato.com/">https://www.talentigelato.com/</a>
+            </div>
+        </div>
+    
+  </div>
+</section>
+</div>
+
+
+</body>
+</html>

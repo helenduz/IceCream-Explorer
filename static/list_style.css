@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+h1{
+    font-weight: 550 !important;
+}
+
+body{
+    height: 100%;
+    margin: 0 auto;
+}
+
+.sec-result{
+    background-color: rgb(240, 165, 25);
+}
+
+.seach-result{
+    background-color: rgb(240, 165, 25);
+    height: 100%;
+}
+
+.result{
+    width: auto;
+    max-width: 1300px;
+    margin: 0 auto 65px;
+}
+
+.product-overview{
+    padding: 1em 1.5em;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+
+}
+
+.start{
+    display: flex;
+    padding: 2em 1.5em;
+}
+
+.start h1{
+    color: white;
+    font-size: 3.5em;
+}
+
+.rank_text{
+    color: white;
+    font-size: 1.2em;
+    font-weight: 300 !important;
+}
+
+.drop-down{
+    margin-left:auto;
+} 
+
+.ice-cream-img{
+    padding-top: 20px;
+    margin-right: 0;
+    max-width: 200px;
+    flex: .4 1 0;
+}
+
+.product-overview img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+.overview-text{
+    padding-top: 1.5em;
+    padding-left: 2em;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    flex: 1 1 0;
+}
+
+.overview-text h1{
+    color: white;
+   max-width: 85%;
+   margin: 0;
+   font-weight: 900;
+   align-self: flex-start;
+   font-size: 2em;
+   padding-top: 0.25em;
+   padding-bottom: 0.5em;
+}
+
+.overview-column{
+    padding: 1em 0;
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.overview-detail{
+    color: white;
+    display: flex;
+    margin-bottom: 1em;
+    flex-direction: row;
+}
+
+.overview-title{
+    color: white;
+    font-size: 1.2em;
+    flex: 1 1 100%;
+    max-width: 30%;
+    max-height: 100%;
+}
+
+.overview-content{
+    flex: 1;
+    font-size: 1.2em;
+    line-height: 150%;
+}
+
+.hyperlink{
+    padding-left: 3em;
+    color: blue;
+    text-decoration: none;
+}
+
+.listed_products:hover{
+    background-color: rgb(231,115,60);
+}
+
+
+.sorry-message{
+    height: 100vh;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300 !important;
+    text-align: center;
+}

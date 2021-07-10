@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    height: 650px;
+    margin: 0 auto;
+    background-color: rgb(240, 165, 25);
+}
+
+.home_img{
+    width: 100%;
+    height: 100%;
+    position: static;
+}
+
+.home_img img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+.search{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.search_content{
+    position: relative;
+    background-color: rgb(240, 165, 25);
+}
+
+.welcome_title{
+    color: white;
+    text-align: center;
+    padding: 7rem 0 0;
+}
+
+.header_top{
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 .5rem;
+    line-height: 1;
+}
+
+.header_title{
+    font-size: 2.5rem;
+    font-family: Verdana, Geneva, sans-serif;
+    text-transform: uppercase;
+}
+
+.welcome_blurb{
+    color: white;
+    padding: 1rem 2.5rem;
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.4;
+}
+
+.home__search__verticals{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    display: flex;
+    max-width: 491px;
+    margin: 5px auto 0;
+    background: transparent;
+    z-index: 3;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.btn-secondary{
+    color:rgb(231,115,60) !important;
+    font-size: 1.1em !important;
+    background: white !important;
+    font-family: Verdana, Geneva, sans-serif !important;
+    flex: 1 0 auto !important;
+    padding: .6em 1em !important;
+    line-height: 1.4em !important;
+    font-weight: 300 !important;
+    border: none !important;
+}
+
+.btn-secondary:hover, .active{
+    background: rgb(231,115,60) !important;
+    color: white !important;
+}
+
+
+.search-button{
+    padding: .5em;
+    margin: 0;
+    background-color: white;
+}
+
+.search-button:hover{
+  background: rgb(231,115,60);
+}
+
+.brand-search, .site-search, .advance-search{
+  width: 491px;
+  padding: 15px 10px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.site-search, .advance-search {
+  display: none;
+}
+
+.advance-search{
+    color: white;
+    width: 520px;
+}
+
+.col-form-label{
+    font-size: 1.2rem !important;
+}
+
+
+.search_bar{
+    border:2px solid #fff;
+    box-shadow: none;
+    font-size: 18px;
+    width: 456px;
+    line-height: 25px;
+    padding: 11px;
+}
+
+.search-button-new{
+    padding: .5em;
+    margin: 0;
+    background-color: transparent;
+}
+
+.search-button-new:hover{
+    background-color: rgb(231,115,60);
+}
+
+.line{
+    width: 150px;
+    height: 16px;
+    margin: 1rem auto;
+}
+
+.line img{
+    width:100%;
+    height: auto;
+}
+
+.form-text{
+    color: white !important;
+}
+

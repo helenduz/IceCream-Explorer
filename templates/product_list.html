@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>LoveMeSomeIceCream</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='list_style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='navigation.css') }}">
+  <!-- Source of external css libarary -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+
+<body>
+  <!--Navigation Bar-->
+	<div class="navigationBar">
+		<div class="contain">
+			<div>
+				<img src={{ url_for('static', filename='logo.png') }} alt="Site logo" class="logo">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href={{ url_for("homePage") }}>Home</a></li>
+          <li><a href={{ url_for("downloadPage") }}>Download Data</a></li>
+          <li><a href={{ url_for("aboutPage") }}>About Data</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="seach-result">
+
+      <div class="start">
+
+        <h1>Results</h1>
+        
+        <!-- Display the ranking option box -->
+        <div class="form-group drop-down">
+        <label for="rank" class="rank_text">Rank products by</label>
+        <form action="/rank" method="post">
+            <select class="form-select" aria-label="select-rank-option" id="rank_box" name="rank" size="1" onchange="this.form.submit()">
+                <option value="none"></option>
+                <option value="product_name">Product Name-Alphabetical</option>
+                <option value="rating">Average Rating</option>
+                <option value="rating_count">Number of Ratings</option>
+            </select>
+        </form>
+        </div>
+
+      </div>
+
+        <!-- Display the sorry message if no results are found -->
+        {% if results == [] %}
+        <div class = "sorry-message">
+          <p>Sorry. There's no product that matches your search keyword. Try again!</p>
+        </div>
+        {% else %}
+        <!-- Display the list of products -->
+        {% for product in results: %} 
+        <div class="listed_products" onclick="location.href='{{ url_for('getProduct', name=product.image_key) }}';" style="cursor: pointer;">
+            <div class="product-overview">
+                <img src="{{url_for('static', filename='images/'+product.image_key+'.png')}}" alt="product image" class="ice-cream-img">
+                <div class="listed_products overview-text">
+                    <h1> {{ product.product_name }} </h1>
+                    <div class="listed_products overview-column">
+                        <div class="listed_products overview-detail">
+                            <div class="listed_products overview-title"><b>Brand Name</b></div>
+                            <div class="listed_products overview-content">{{ product.brand }}</div>
+                        </div>
+
+                        <div class="listed_products overview-detail">
+                            <div class="listed_products overview-title"><b>Rating</b></div>
+                            <div class="listed_products overview-content"> {{ product.rating }} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
+<!-- Source of external js libarary -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

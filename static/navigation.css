@@ -1,0 +1,54 @@
+.contain{
+    padding: 15px 0px;
+    width: 95%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+}
+
+.navigationBar{
+    width: 100%;
+    overflow: hidden;
+    height: 100px;
+    line-height: 40px;
+    background: white;
+} 
+
+.logo{
+    width: 300px;
+    display: inline-block;
+}
+
+.menu{
+    align-items: center;
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.menu ul{
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.menu li{
+    display: inline-block;
+    height: 100%;
+    font-size: 1.1em;
+    text-align: center;
+    list-style: none;
+}
+
+.menu li a{
+    color: rgb(231,115,60);
+    text-decoration: none;
+    font-family: Verdana, Geneva, sans-serif;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 17px;
+}
+
+.menu li a:hover{
+    color: white;
+    background-color: rgb(231,115,60);
+}
