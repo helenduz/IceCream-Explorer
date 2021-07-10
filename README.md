@@ -1,7 +1,7 @@
 # IceCream-Explorer
 
 ## Introduction
-A website that allows user to search for ice cream products info from a large database. This is a team project for the _Software Design_ course at Carleton College, co-authored with Peter Tu @tutingjun and Yucheng Yang @YuchengY (we were all new to full-stack web development!). The data is retrieved from [**Kaggle**](https://www.kaggle.com/tysonpo/ice-cream-dataset) and managed using PostgreSQL. 
+A website that allows users to search for ice cream products info from a large database. This is a team project for the _Software Design_ course at Carleton College, co-authored with Peter Tu @tutingjun and Yucheng Yang @YuchengY (we were all new to full-stack web development!). The data is retrieved from [**Kaggle**](https://www.kaggle.com/tysonpo/ice-cream-dataset) and managed using PostgreSQL. 
 
 **Built with:**
 - front-end: HTML, CSS, JavaScript 
@@ -12,8 +12,8 @@ A website that allows user to search for ice cream products info from a large da
 Currently, this website can only be run on a local server. During development, we ran the program on the Perlman server at Carleton College, which has the following requirements already installed. 
 
 - Python3 (last run with Python 3.6.8)
-- [**psycopg2**](https://pypi.org/project/psycopg2/) (tested with psycopg 2.7.3)
-- Flask (tested with Flask 0.12.2)
+- [**psycopg2**](https://pypi.org/project/psycopg2/) (last run with psycopg 2.7.3)
+- Flask (last run with Flask 0.12.2)
 
 
 ## How to Run the Program 
@@ -32,8 +32,9 @@ On localhost:
 
 
 ## What It Does
-Search for ice cream products by brand name, product name, ingredient included, as well as many other filters (in the advance search section):
+Search for ice cream products by brand name, product name, ingredient, as well as many other filters (in the advance search section):
 
+Rank products in search result:
 
 Click on products on the list to view details:
 
