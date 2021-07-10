@@ -34,12 +34,21 @@ On localhost:
 ## What It Does
 Search for ice cream products by brand name, product name, ingredient, as well as many other filters (in the advance search section):
 
+![Searching](https://github.com/helenduz/IceCream-Explorer/demo/search.gif "Searching")
+
 Rank products in search result:
+
+![Ranking](https://github.com/helenduz/IceCream-Explorer/demo/rank.gif "Ranking")
+
 
 Click on products on the list to view details:
 
+![Details](https://github.com/helenduz/IceCream-Explorer/demo/detail.gif "Details")
+
+
 Downloading the dataset and viewing metadata info: 
 
+![Download](https://github.com/helenduz/IceCream-Explorer/demo/download.gif "Downloading data and Viewing Metadata")
 
 
 ## Known Issues
