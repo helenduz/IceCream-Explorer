@@ -14,6 +14,7 @@ Currently, this website can only be run on a local server. During development, w
 - Python3 (last run with Python 3.6.8)
 - [**psycopg2**](https://pypi.org/project/psycopg2/) (last run with psycopg 2.7.3)
 - Flask (last run with Flask 0.12.2)
+- PostgreSQL
 
 
 ## How to Run the Program 
@@ -26,8 +27,9 @@ On the Perlman server:
 
 
 On localhost:
-1. After cloning this repository onto your local machine, navigate to the main folder. 
-3. In the command line, type `python3 webapp.py 127.0.0.1 <port number>`, where `<port number>` can be 5107 or 5207.
+1. After cloning this repository onto your local machine, navigate to the /Data/IceCreamData folder.
+2. In the command line, type `psql -f createtable.sql` to create the database. Type `psql` then enter `\dt` at the prompt. Next, import the data by typing `\copy products FROM 'products.csv' DELIMITER ',' CSV` followed by `\copy reviews FROM 'reviews.csv' DELIMITER ',' CSV` at the prompt. 
+3. Navigate back to the main folder, then in the command line, type `python3 webapp.py 127.0.0.1 <port number>`, where `<port number>` can be 5107 or 5207.
 4. In your web browser, go to `http://127.0.0.1:<port bumber>`, where `<port number>` is the port number you entered in the previous step.
 
 
