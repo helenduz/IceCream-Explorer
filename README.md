@@ -5,7 +5,7 @@ A website that allows users to search for ice cream products info from a large d
 
 **Built with:**
 - front-end: HTML, CSS, JavaScript 
-- back-end: Flask, Psycopg2 (PostgreSQL database adapter)
+- back-end: Flask
 
 
 ## Requirement 
