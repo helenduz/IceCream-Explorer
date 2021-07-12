@@ -28,7 +28,7 @@ On the Perlman server:
 
 On localhost:
 1. After cloning this repository onto your local machine, navigate to the /Data/IceCreamData folder.
-2. In the command line, type `psql -f createtable.sql` to create the database. Type `psql` then enter `\dt` at the prompt. Next, import the data by typing `\copy products FROM 'products.csv' DELIMITER ',' CSV` followed by `\copy reviews FROM 'reviews.csv' DELIMITER ',' CSV` at the prompt. 
+2. In the command line, type `psql -f createtable.sql` to create the database. Type `psql` then enter `\dt` at the prompt. Next, import the data by typing `\copy products FROM 'products.csv' DELIMITER ',' CSV` followed by `\copy reviews FROM 'reviews.csv' DELIMITER ',' CSV` at the prompt. You will also need to modify the username and password in `datasource.py`.
 3. Navigate back to the main folder, then in the command line, type `python3 webapp.py 127.0.0.1 <port number>`, where `<port number>` can be 5107 or 5207.
 4. In your web browser, go to `http://127.0.0.1:<port bumber>`, where `<port number>` is the port number you entered in the previous step.
 
