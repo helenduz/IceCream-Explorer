@@ -9,7 +9,7 @@ A website that allows users to search for ice cream products info from a large d
 
 
 ## Requirement 
-Currently, this website can only be run on a local server. During development, we ran the program on the Perlman server at Carleton College, which has the following requirements already installed. 
+Currently, this website is not yet deployed. During development, we ran the program on the Perlman server at Carleton College, which has the following requirements already installed. 
 
 - Python3 (last run with Python 3.6.8)
 - [**Psycopg2**](https://pypi.org/project/psycopg2/) (last run with psycopg 2.7.3)
