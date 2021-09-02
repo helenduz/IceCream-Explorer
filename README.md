@@ -12,7 +12,7 @@ A website that allows users to search for ice cream products info from a large d
 - deployment: Heroku
 
 
-## Requirement 
+## Requirements
 This application is written in Python3 (last run with Python 3.9.4).
 To run the webapp on Flask's development server, install the following packages:
 - Psycopg2 (last run with psycopg 2.7.3)
@@ -28,7 +28,11 @@ To run the webapp on Flask's development server, install the following packages:
 \copy products FROM './Data/IceCreamData/products.csv' DELIMITER ',' CSV
 \copy reviews FROM './Data/IceCreamData/reviews.csv' DELIMITER ',' CSV
 ```
-4. Modify the `connection = psycopg2.connect(DATABASE_URL, sslmode='require')` line in datasource.py to ```connection = psycopg2.connect(database="", user="", password="", host="localhost")```, where `database`, `user`, and `password` should be modified according to what you obtained in step 1
+4. Modify the `connection = psycopg2.connect(DATABASE_URL, sslmode='require')` line in datasource.py to 
+```
+connection = psycopg2.connect(database="", user="", password="", host="localhost")
+```
+where `database`, `user`, and `password` should be modified according to what you obtained in step 1
 5. In the command line, type `python3 webapp.py 127.0.0.1 <port number>`, where `<port number>` can be an unused port number of your choice
 6. In your web browser, go to `http://127.0.0.1:<port bumber>`, where `<port number>` is the port number you entered in the previous step
 
