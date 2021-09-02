@@ -1,5 +1,5 @@
 import psycopg2
-
+import os
 
 class DataSource:
     '''
@@ -25,8 +25,9 @@ class DataSource:
 
         Note: exits if a connection cannot be established.
         '''
+        DATABASE_URL = os.environ['DATABASE_URL']
         try:
-            connection = psycopg2.connect(database="tut", user="tut", password="farm498lamp", host="localhost")
+            connection = psycopg2.connect(DATABASE_URL, sslmode='require')
         except Exception as e:
             print("Connection error: ", e)
             exit()
