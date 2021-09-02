@@ -25,6 +25,8 @@ class DataSource:
 
         Note: exits if a connection cannot be established.
         '''
+        # for production, the connection is pointed to the DATABSE_URL env var 
+        # which is set up when we configured the database on Heroku
         DATABASE_URL = os.environ['DATABASE_URL']
         try:
             connection = psycopg2.connect(DATABASE_URL, sslmode='require')
@@ -48,7 +50,7 @@ class DataSource:
         if (match_column == "ingredients"):
             keyword = keyword.upper()
         try:
-            cursor = self.connection.cursor();
+            cursor = self.connection.cursor()
             if (match_column != "name"):
                 query = "SELECT image_key FROM products WHERE " + str(match_column) + " LIKE '%" + str(keyword) + "%'"
                 cursor.execute(query)
