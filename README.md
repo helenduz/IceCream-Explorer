@@ -57,4 +57,5 @@ Downloading the dataset and viewing metadata info:
 If you use the browser back button when returning from product_list(product_list.html) to home page(index.html), and then hit the search button on the home page again, all products will be returned (the search filter will not work even though the conditions put in before will be there). In short: don't hit the browser back button when you are at the product_list(product_list.html) page. Click on the home page icon to go back to the home page when you want to initiate a new search.
 
 ## What's Next
-- Write a script that automates the SQL commands while creating the database
+- Create table and conduct queries using ORM (eg. SQLAlchemy) instead of plain SQL
+- Deployment via Heroku
