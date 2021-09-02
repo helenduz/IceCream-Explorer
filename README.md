@@ -28,13 +28,9 @@ To run the webapp on Flask's development server, install the following packages:
 \copy products FROM './Data/IceCreamData/products.csv' DELIMITER ',' CSV
 \copy reviews FROM './Data/IceCreamData/reviews.csv' DELIMITER ',' CSV
 ```
-4. 
-  
-4. 
-5. After cloning this repository onto your local machine, navigate to the /Data/IceCreamData folder.
-6. In the command line, type `psql -f createtable.sql` to create the database. Type `psql` then enter `\dt` at the prompt. Next, import the data by typing `\copy products FROM 'products.csv' DELIMITER ',' CSV` followed by `\copy reviews FROM 'reviews.csv' DELIMITER ',' CSV` at the prompt. You will also need to modify the username and password in `datasource.py`.
-7. Navigate back to the main folder, then in the command line, type `python3 webapp.py 127.0.0.1 <port number>`, where `<port number>` can be 5107 or 5207.
-8. In your web browser, go to `http://127.0.0.1:<port bumber>`, where `<port number>` is the port number you entered in the previous step.
+4. Modify the `connection = psycopg2.connect(DATABASE_URL, sslmode='require')` line in datasource.py to ```connection = psycopg2.connect(database="", user="", password="", host="localhost")```, where `database`, `user`, and `password` should be modified according to what you obtained in step 1
+5. In the command line, type `python3 webapp.py 127.0.0.1 <port number>`, where `<port number>` can be an unused port number of your choice
+6. In your web browser, go to `http://127.0.0.1:<port bumber>`, where `<port number>` is the port number you entered in the previous step
 
 
 If you have access to the Perlman server (for Carleton College users only):
